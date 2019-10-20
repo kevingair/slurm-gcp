@@ -96,7 +96,7 @@ resources:
     tier: STANDARD
     description: my slurm storage
     networks:
-    - network: newer
+    - network: default
     fileShares:
     - name: slurm_share
       capacityGb: 1024
