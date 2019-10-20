@@ -23,12 +23,12 @@ resources:
 - name: slurm-cluster
   type: slurm.jinja
   properties:
-    cluster_name            : g1
+    cluster_name            : my-cluster
     static_node_count       : 1
     max_node_count          : 100
 
-    zone                    : us-central1-b
-    region                  : us-central1
+    zone                    : us-west1-b
+    region                  : us-west1
     cidr                    : 10.10.0.0/16
 
     # Optional network configuration fields
@@ -85,4 +85,19 @@ resources:
     #slurm_version           : 19.05-latest
     #default_account         : default
 
+
+resources:
+- name: filestore
+  type: gcp-types/file-v1beta1:projects.locations.instances
+  properties:
+    parent: projects/isolated-project/locations/us-west1-b
+    # Any name of the instance would do
+    instanceId: slurm-store
+    tier: STANDARD
+    description: my slurm storage
+    networks:
+    - network: newer
+    fileShares:
+    - name: slurm_share
+      capacityGb: 1024
 #  [END cluster_yaml]
