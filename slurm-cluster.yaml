@@ -86,17 +86,17 @@ resources:
     #default_account         : default
 
 
-- name: filestore
-  type: gcp-types/file-v1beta1:projects.locations.instances
-  properties:
-    parent: projects/kevin-sandbox-0917/locations/us-west1-b
-    # Any name of the instance would do
-    instanceId: slurm-store
-    tier: STANDARD
-    description: my slurm storage
-    networks:
-    - network: default
-    fileShares:
-    - name: slurm_share
-      capacityGb: 1024
+#- name: filestore
+#  type: gcp-types/file-v1beta1:projects.locations.instances
+#  properties:
+#    parent: projects/kevin-sandbox-0917/locations/us-west1-b
+#    # Any name of the instance would do
+#    instanceId: slurm-store
+#    tier: STANDARD
+#    description: my slurm storage
+#    networks:
+#    - network: default
+#    fileShares:
+#    - name: slurm_share
+#      capacityGb: 1024
 #  [END cluster_yaml]
