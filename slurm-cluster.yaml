@@ -90,7 +90,7 @@ resources:
 - name: filestore
   type: gcp-types/file-v1beta1:projects.locations.instances
   properties:
-    parent: projects/{{ env["deployment"] }}/locations/us-west1-b
+    parent: projects/kevin-sandbox-0917/locations/us-west1-b
     # Any name of the instance would do
     instanceId: slurm-store
     tier: STANDARD
